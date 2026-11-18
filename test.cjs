@@ -2,9 +2,9 @@ const {test}=require('node:test');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const html=fs.readFileSync(__dirname+'/index.html','utf8');
-test('selected public source links and all four demos are present',()=>{
-for(const repo of ['a-sea-of-sand','eclipse-lab']) assert.ok(html.includes('https://github.com/OddlyMethodical/'+repo));
-for(const url of ['https://oddlymethodical.github.io/a-sea-of-sand/','https://oddlymethodical.github.io/eclipse-lab/','https://oddlymethodical.github.io/lily-pad/','https://oddlymethodical.github.io/fourier-playground/']) assert.ok(html.includes(url));
+test('selected public source links and all five demos are present',()=>{
+for(const repo of ['a-sea-of-sand','eclipse-lab','ten-little-things']) assert.ok(html.includes('https://github.com/OddlyMethodical/'+repo));
+for(const url of ['https://oddlymethodical.github.io/a-sea-of-sand/','https://oddlymethodical.github.io/eclipse-lab/','https://oddlymethodical.github.io/lily-pad/','https://oddlymethodical.github.io/fourier-playground/','https://oddlymethodical.github.io/ten-little-things/']) assert.ok(html.includes(url));
 });
 test('local assets and anchor destinations exist',()=>{
 for(const [,href] of html.matchAll(/href="([^"]+)"/g)) {
